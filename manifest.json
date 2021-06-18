@@ -2,7 +2,7 @@
 
   "manifest_version": 2,
   "name": "SemanaClases",
-  "version": "1.0",
+  "version": "2.0",
 
   "description": "Indica la semana de clases actual en el horario de U-Cursos.",
 

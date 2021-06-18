@@ -23,8 +23,14 @@ function semanasEntre(d1, d2) {
 
 function addNumSemana(texto) {
         lineas = texto.split("\n")
+        var fecha_horario_dom = document.getElementById("body").getElementsByTagName("h1")[0]
+
+        // Porque no somos tontos y usamos el sistema dd/mm/yyyy tenemos que
+        // hacer esto aaaaa
+        var partes_fecha = fecha_horario_dom.innerText.split(" ")[2].split("/")
+
+        var fecha_actual = new Date(partes_fecha[2], partes_fecha[1] - 1, partes_fecha[0])
         var date;
-        var hoy = new Date()
 
         for (var i = 0; i < lineas.length; i++) {
                 if (lineas[i].includes("DTSTART")) {
@@ -32,9 +38,9 @@ function addNumSemana(texto) {
                         break
                 }
         }
-        const diff = semanasEntre(date, hoy) - 1
+        const diff = semanasEntre(date, fecha_actual) - 1
         const add = " (" + diff.toString() + ")"
 
         // Insertamos el texto en la página
-        document.getElementById("body").getElementsByTagName("h1")[0].append(add)
+        fecha_horario_dom.append(add)
 }
