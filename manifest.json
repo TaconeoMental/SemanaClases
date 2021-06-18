@@ -1,0 +1,20 @@
+{
+
+  "manifest_version": 2,
+  "name": "SemanaClases",
+  "version": "1.0",
+
+  "description": "Indica la semana de clases actual en el horario de U-Cursos.",
+
+  "icons": {
+    "48": "icon-48.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.u-cursos.cl/usuario/*/horario/*"],
+      "js": ["semana.js"]
+    }
+  ]
+
+}
