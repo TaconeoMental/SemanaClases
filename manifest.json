@@ -2,7 +2,7 @@
 
   "manifest_version": 2,
   "name": "SemanaClases",
-  "version": "2.0",
+  "version": "2.1",
 
   "description": "Indica la semana de clases actual en el horario de U-Cursos.",
 
@@ -13,7 +13,7 @@
   "content_scripts": [
     {
       "matches": ["*://*.u-cursos.cl/usuario/*/horario/*"],
-      "js": ["semana.js"]
+      "js": ["ical.js", "semana.js"]
     }
   ]
 
