@@ -91,14 +91,20 @@ function recesosHasta(actual, clases) {
 
         var i = 0
         while (i < clases.length) {
-                if (clases[i] > actual || estanEnMismaSemana(clases[i], actual)) {
+                console.log(actual)
+                console.log(clases[i])
+                console.log(clases[i] > actual || estanEnMismaSemana(clases[i], actual))
+                if ( clases[i] > actual || estanEnMismaSemana(clases[i], actual)) {
                         return recesos
                 }
 
                 semanas_entre = semanasEntre(clases[i], clases[i + 1])
+                console.log(semanas_entre)
                 recesos += semanas_entre - 1
+                console.log(`recesos: ${recesos}`)
                 i += semanas_entre
         }
+        return recesos
 }
 
 function addNumSemana(texto) {
@@ -126,6 +132,8 @@ function addNumSemana(texto) {
         var semanas_total = semanasEntre(fechas_filt[0], fecha_actual) + 1 // +1 porque queremos tomar en cuenta la actual
         var recesos_pasados = recesosHasta(fecha_actual, fechas_filt)
         var hay_clases = esSemanaConClases(fecha_actual, fechas_filt)
+
+        console.log(recesos_pasados)
 
         var texto = hay_clases? semanas_total - recesos_pasados:"No hay clases"
 
