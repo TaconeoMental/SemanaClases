@@ -1,3 +1,3 @@
 # SemanaClases
 
-[Página principal](https://addons.mozilla.org/en-US/firefox/addon/semanaclases/)
+Código movido a [tU-Cursos](https://github.com/Nyveon/tU-Cursos).
